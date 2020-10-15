@@ -17,7 +17,7 @@ const About = ({
   const { info, stack, title, image } = nodes[0]
   return (
     <Layout>
-      <SEO title="CV" description="Sohails CV" />
+      <SEO title="CV" description="CV" />
       <section className="about-page">
         <div className="section-center about-center">
           <Image fluid={image.childImageSharp.fluid} className="about-img" />
@@ -32,13 +32,13 @@ const About = ({
             </div>
 
             <div className="btn cv">
-              <a href={downloadFile} download>
-                Ladda ner fullständig CV
+              <a href="#">
+                Download full CV
               </a>
               {` `}
             </div>
             <Link to="/contact" className="btn">
-              kontakta mig
+              Contact me
             </Link>
           </article>
         </div>

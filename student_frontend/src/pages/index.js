@@ -14,12 +14,8 @@ export default ({ data }) => {
   } = data
   return (
     <Layout>
-      <SEO title="Hem" description="Startsidan" />
+      <SEO title="Home" description="Start page" />
       <Hero />
-      <Services />
-      <Jobs />
-      <Projects projects={projects} title="projekt i fokus" showLink />
-      <Blogs blogs={blogs} title="Senaste artiklar" showLink />
     </Layout>
   )
 }

@@ -5,6 +5,8 @@ Fonts
 */
 /* @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap"); */
 
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 /*
 =============== 
 Variables
@@ -24,7 +26,7 @@ Variables
   --clr-primary-7: hsl(184, 65%, 59%);
   --clr-primary-8: hsl(184, 80%, 74%);
   --clr-primary-9: hsl(185, 94%, 87%);
-  --clr-primary-10: hsl(186, 100%, 94%);
+  --clr-primary-10: hsl(0, 0%, 90%);
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-3: hsl(209, 34%, 30%);
@@ -38,6 +40,7 @@ Variables
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
+  --clr-black: #000;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
@@ -47,6 +50,7 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 700px;
+  --clr-bg: rgb(189, 189, 189);
 }
 /*
 =============== 
@@ -63,11 +67,11 @@ Global Styles
 }
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-white);
+  background: var(--clr-bg);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  margin-top: 5rem;
+  margin-top: 1.5rem;
 }
 ul {
   list-style-type: none;
@@ -161,7 +165,7 @@ p {
 
 .section-center {
   width: 90vw;
-  margin: 0 auto;
+  margin: 20pt auto;
   max-width: 1170px;
 }
 @media screen and (min-width: 992px) {
@@ -209,9 +213,6 @@ Navbar
 */
 
 .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 5rem;
   display: flex;
@@ -270,8 +271,6 @@ Navbar
     box-shadow: 0px 2px var(--clr-primary-5);
   }
   .nav-center {
-    display: grid;
-    grid-template-columns: auto 1fr;
     align-items: center;
   }
 }
@@ -281,62 +280,7 @@ Navbar
     background: transparent;
   }
 }
-/*
-=============== 
-Sidebar
-===============
-*/
-.sidebar {
-  background: var(--clr-grey-10);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transition: var(--transition);
-  transform: translateX(-100%);
-}
-.show-sidebar {
-  opacity: 1;
-  transform: translateX(0);
-}
-.sidebar-links li {
-  opacity: 0;
-}
-.sidebar-links li a {
-  display: block;
-  text-align: center;
-  text-transform: capitalize;
-  color: var(--clr-grey-5);
-  letter-spacing: var(--spacing);
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-  transition: var(--transition);
-  border-radius: var(--radius);
-}
-.sidebar-links li a:hover {
-  background: var(--clr-primary-9);
-  color: var(--clr-primary-5);
-}
-.close-btn {
-  position: absolute;
-  right: 4.75%;
-  top: 2.75%;
-  font-size: 2.5rem;
-  background: transparent;
-  border-color: transparent;
-  color: var(--clr-red-dark);
-  cursor: pointer;
-}
-@media screen and (min-width: 992px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-}
+
 /*
 =============== 
 Sidebar Animation
@@ -407,10 +351,7 @@ Hero
 */
 /* underline added to globals */
 .hero {
-  margin-top: -5rem;
-  padding-top: 5rem;
-  height: 100vh;
-  background: var(--clr-primary-10);
+  margin-bottom: 30pt;;
   position: relative;
 }
 
@@ -448,7 +389,6 @@ Hero
     left: 65%;
     right: 0;
     bottom: 0;
-    background: var(--clr-white);
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -864,7 +804,13 @@ Pages
 .contact-page {
   background: var(--clr-grey-10);
   min-height: calc(100vh - 5rem - 9rem);
+  margin-top: 20pt;
 }
+
+.project-page {
+  margin-top: 20pt;
+}
+
 .error-page {
   display: grid;
   place-items: center;
@@ -1039,4 +985,114 @@ Blog Template
   width: 15rem;
   height: 15rem;
   margin: 3rem 0;
+}
+
+/****************************************************/
+
+.hero-info {
+  padding: 20pt;
+  box-shadow: 0 0 10pt rgba(0, 0, 0, 0.4);
+}
+
+.hero-info a {
+  color: #0000ee;
+}
+
+.hero-info > div > aside {
+  line-height: 1.4em;
+  display: flex;
+  justify-content: center;
+}
+
+.profilepic {
+  justify-self: center;
+  width: 300px;
+  border-radius: 30px;
+}
+
+.hero_top h1 {
+  font-family: 'Varela Round';
+
+}
+
+/* .hero-info > div > aside > contact {
+  justify-self: center;
+  align-self: center;
+}
+.hero-info > div > aside > contact > header {
+  position: relative;
+}
+.hero-info > div > aside > contact > header > p {
+  display: inline-block;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.hero-info > div > aside > contact > aside > section {
+  display: block;
+  min-width: 15rem;
+}
+*/
+.hero-info > div > main {
+  padding: 20pt;
+}
+.hero-info > div > main > content {
+  display: block;
+}
+.hero-info > div > main > content > section:not(:first-child) {
+  margin-top: 30pt;
+}
+.hero-info > div > main > content > section > header {
+  font-weight: bold;
+  font-size: 2em;
+  border-bottom: 1px solid rgb(46, 46, 46, 0.2);
+  margin-bottom: 10pt;
+}
+.hero-info > div > main > content > section > article > header {
+  margin-bottom: 10pt;
+  font-size: 2em;
+  text-align: center;
+}
+.hero-info > div > main > content > section > article > content {
+  display: block;
+  padding: 0 10pt 0 10pt;
+}
+.hero-info > div > main > content > section > article > content > p {
+  margin: 10pt 0 10pt 0;
+}
+.hero-info > div > main > content > section > skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.hero-info > div > main > content > section > skills > section {
+  padding: 0 15pt 20pt 15pt;
+  width: 140pt;
+}
+.hero-info > div > main > content > section > skills > section > header {
+  font-size: 1.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.hero-info > div > main > content > section > skills > section > content > ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.hero-info > div > main > content > section > skills > section > content > ul > li {
+  display: block;
+  margin-top: 5pt;
+}
+.hero-info > div > main > content > section > skills > section > content > ul > li > span {
+  font-size: 1em;
+  font-family: 'EB Garamond';
+}
+
+.competence-section > article:not(:first-child) {
+  margin-top: 30px;
+}
+.competence-section > article > content > header {
+  font-weight: bold;
 }

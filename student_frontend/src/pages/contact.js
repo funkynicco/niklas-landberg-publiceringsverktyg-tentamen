@@ -5,33 +5,33 @@ import SEO from "../components/SEO"
 const contact = () => {
   return (
     <Layout>
-      <SEO title="Kontakt" description="Kontaktsidan" />
+      <SEO title="Contact" description="Contactpage" />
       <section className="contact-page">
         <article className="contact-form">
-          <h3>kontakta mig</h3>
+          <h3>Contact me</h3>
           <form action="https://formspree.io/f/mgepodel" method="POST">
             <div className="form-group">
               <input
                 type="text"
-                placeholder="namn"
+                placeholder="your name"
                 name="name"
                 className="form-control"
               />
               <input
                 type="email"
-                placeholder="epost"
+                placeholder="email"
                 name="email"
                 className="form-control"
               />
               <textarea
                 name="message"
                 rows="5"
-                placeholder="meddelande"
+                placeholder="message"
                 className="form-control"
               ></textarea>
             </div>
             <button type="submit" className="submit-btn btn">
-              Kontakta mig
+              Contact me
             </button>
           </form>
         </article>
